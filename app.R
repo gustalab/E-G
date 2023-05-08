@@ -504,7 +504,7 @@ server <- function(input, output, session) {
         # contentType = "image/jpg",
         alt = "Face"
       )
-  })
+  }, deleteFile = FALSE)
   
   output$image32<- renderImage({
     list(
@@ -514,7 +514,7 @@ server <- function(input, output, session) {
       # contentType = "image/jpg",
       alt = "Face"
     )
-  })
+  }, deleteFile = FALSE)
   
   output$image33<- renderImage({
     list(
@@ -524,7 +524,7 @@ server <- function(input, output, session) {
       # contentType = "image/jpg",
       alt = "Face"
     )
-  })
+  }, deleteFile = FALSE)
   
   output$image35<- renderImage({
     list(
@@ -534,13 +534,13 @@ server <- function(input, output, session) {
       # contentType = "image/jpg",
       alt = "Face"
     )
-  })
+  }, deleteFile = FALSE)
   
   
   output$box5<- renderValueBox({
     valueBox(Sys.Date()-as.Date("2023-04-20"),  
              "days to eternity", color = "red")
-  })
+  }, deleteFile = FALSE)
 
 }
 
