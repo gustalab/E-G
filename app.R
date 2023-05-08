@@ -216,69 +216,30 @@ ui <- fluidPage(
 
 ## AFTER ----
 
-div(
-  
-
-  column(
-    width = 3,
-    wellPanel(
-      style = "background:#ACC2DD",
+    div(
+      
+      class = "container",
+      style = "background-color:#E5E4E2;",
       class = "text-danger",
-      h1(class= "text-center", strong("She")),
-      imageOutput("image33")
-    )
-  ),
-  column(
-    width = 3,
-    wellPanel(
-      style = "background:#ACC2DD",
-      class = "text-danger",
-      h1(class= "text-center", strong("Said")),
-      imageOutput("image32")
-    )
-  ),
-  
-  column(
-    width = 3,
-    wellPanel(
-      style = "background:#ACC2DD",
-      class = "text-danger",
-      h1(class= "text-center", strong("YESSS")),
-      imageOutput("image30")
-    )
-  ),
-
-  column(
-    width = 3,
-    wellPanel(
-      style = "background:#ACC2DD",
-      class = "text-danger",
-      h1(class= "text-center", strong(":)")),
-      imageOutput("image35")
-    )
-  )
-  
-) ,
-
+      h1(class= "text-center", strong("She said YESSS :))")),
+      h1(class= "text-center", strong("20 NİSAN 2023")),
+      infoBoxOutput("box5"),
+      
+      
+      class = "bg-danger"
+    ),
 
 
     div(
       class = "jumbotron",
       
-      column(
-        width = 9,
-        h1(class= "text-center", strong("20 NİSAN 2023"))
-        
-      ),
-      column(
-        width = 3,
-        infoBoxOutput("box5")
-      ),
-      
       # style = "background:url('31.jpg'); background-size:cover",
-
+      
+      tags$image(src = "33.jpg", type = "image/jpg", class = "img-rounded img-responsive"),
+      tags$image(src = "32.jpg", type = "image/jpg", class = "img-rounded img-responsive"),
+      tags$image(src = "34.jpg", type = "image/jpg", class = "img-rounded img-responsive"),
+      tags$image(src = "30.jpg", type = "image/jpg", class = "img-rounded img-responsive"),
       tags$image(src = "31.jpg", type = "image/jpg", class = "img-rounded img-responsive"),
-      class = "text-danger"
       
     ),
   
@@ -475,72 +436,12 @@ server <- function(input, output, session) {
   }, deleteFile = FALSE)
   
   
-  # observeEvent(input$q1, {
-  # 
-  #   if(input$q1 == "Acting") {
-  #     sendSweetAlert(
-  #       session = session,
-  #       title = "Success !!",
-  #       text = "All in order",
-  #       type = "success"
-  #     )
-  #   } else {
-  #     sendSweetAlert(
-  #       session = session,
-  #       title = "Error...",
-  #       text = "Oups !",
-  #       type = "error"
-  #     )
-  #   }
-  # 
-  # })
-  
-  
-  output$image30<- renderImage({
-      list(
-        class = "img-rounded img-responsive",
-        src = "www/30.jpg",
-        # width='200px',height='400px',
-        # contentType = "image/jpg",
-        alt = "Face"
-      )
-  }, deleteFile = FALSE)
-  
-  output$image32<- renderImage({
-    list(
-      class = "img-rounded img-responsive",
-      src = "www/32.jpg",
-      # width='200px',height='400px',
-      # contentType = "image/jpg",
-      alt = "Face"
-    )
-  }, deleteFile = FALSE)
-  
-  output$image33<- renderImage({
-    list(
-      class = "img-rounded img-responsive",
-      src = "www/33.jpg",
-      # width='200px',height='400px',
-      # contentType = "image/jpg",
-      alt = "Face"
-    )
-  }, deleteFile = FALSE)
-  
-  output$image35<- renderImage({
-    list(
-      class = "img-rounded img-responsive",
-      src = "www/35.jpg",
-      # width='200px',height='400px',
-      # contentType = "image/jpg",
-      alt = "Face"
-    )
-  }, deleteFile = FALSE)
   
   
   output$box5<- renderValueBox({
     valueBox(Sys.Date()-as.Date("2023-04-20"),  
              "days to eternity", color = "red")
-  }, deleteFile = FALSE)
+  })
 
 }
 
